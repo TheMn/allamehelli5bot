@@ -1,3 +1,8 @@
+/**
+ * Converts Persian and Arabic numbers in a string to English numbers.
+ * @param {string} input The string containing numbers to convert.
+ * @returns {string} The converted string with English numbers.
+ */
 function convertNumbers(input){
   const toEng = {'۰': '0',
                 '۱': '1',
@@ -28,6 +33,10 @@ function convertNumbers(input){
   return input;
 }
 
+/**
+ * Fetches a URL and logs the response.
+ * @param {string} url The URL to fetch.
+ */
 function fetchAndLog(url){
   var response = UrlFetchApp.fetch(url);
   Logger.log(response.getContentText());
@@ -35,6 +44,9 @@ function fetchAndLog(url){
 
 //################################################################################################################
 
+/**
+ * A function for testing purposes. It is used to manually test functions during development.
+ */
 function testing(){
   // Logger.log(getRowByKey("TEACHERS", "phone_number", "123"));
   Logger.log(logout(1234));
@@ -42,6 +54,11 @@ function testing(){
 
 //################################################################################################################
 
+/**
+ * The main function that handles POST requests from Telegram.
+ * This function is the entry point for all messages sent to the bot.
+ * @param {object} e The event object from the POST request.
+ */
 function doPost(e){
   var contents = JSON.parse(e.postData.contents);
   
@@ -194,4 +211,3 @@ function doPost(e){
 }
 
 //################################################################################################################
-
